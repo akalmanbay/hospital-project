@@ -1,10 +1,12 @@
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import PropTypes from 'prop-types';
-// import 'leaflet/dist/leaflet.css';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 // @mui
 import { Card, CardHeader, Box } from '@mui/material';
 // components
 import { useChart } from '../../../components/chart';
+
 
 AppCityMap.propTypes = {
     title: PropTypes.string,
@@ -55,7 +57,9 @@ export default function AppCityMap({ title, subheader, position }) {
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
+
                     <Marker position={[position.lon, position.lat]}>
+
                         <Popup>
                             Информация о больнице <br />
                         </Popup>

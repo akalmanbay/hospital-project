@@ -48,14 +48,20 @@ export default function AppRegionMap({ title, subheader }) {
 
             <Box sx={{ p: 3, pb: 1 }} dir="ltr">
                 {console.log('props', position.lon)}
-                <MapContainer center={[position.lon, position.lat]} zoom={5} style={{ height: '60vh', width: '100%' }}>
+                <MapContainer center={[47, 73]} zoom={5} style={{ height: '60vh', width: '100%' }}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     <Marker position={[position.lon, position.lat]}>
                         <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
+                            Информация о больнице в Астане<br />
+                        </Popup>
+                    </Marker>
+
+                    <Marker position={[43.2220, 76.8512]}>
+                        <Popup>
+                            Информация о больнице в Алматы<br />
                         </Popup>
                     </Marker>
                 </MapContainer>
